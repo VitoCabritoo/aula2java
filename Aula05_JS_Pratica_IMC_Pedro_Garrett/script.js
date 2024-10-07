@@ -23,7 +23,7 @@ function calcular(event){
         altura = document.getElementById('altura').value;
 
         //calculo do imc
-        imc = peso/(altura*altura);
+        imc = peso/Math.pow(altura, altura);
 
         //testando a recepção dos valores de peso e altura
         // testando calculo de imc
@@ -35,7 +35,17 @@ function calcular(event){
         if(imc<17){
             resultado.innerHTML = '</br> Seu resultado foi: '+imc.toFixed(2)+'</br>Cuidado, você está muito abaixo do seu peso'
         }
-        else if(imc>=17&&imc<24,99){
+        else if(imc>=17&&imc<18.5){
             resultado.innerHTML = '</br> Seu resultado foi: '+imc.toFixed(2)+'</br>Você está abaixo do seu peso'
         }
+        else if(imc>=18.5&&imc<24.99){
+            resultado.innerHTML = '</br> Seu resultado foi: '+imc.toFixed(2)+'</br>Você está no peso normal'
+        }
+        else if(imc>=25&&imc<29.99){
+            resultado.innerHTML = '</br> Seu resultado foi: '+imc.toFixed(2)+'</br>Você está acima do seu peso'
+        }
+        else if(imc>=30){
+            resultado.innerHTML = '</br> Seu resultado foi: '+imc.toFixed(2)+'</br>Você está obeso'
+        }
+
         }
